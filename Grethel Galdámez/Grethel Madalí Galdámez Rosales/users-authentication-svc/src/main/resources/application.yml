@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: local
+
+service:
+  configuration:
+    http:
+      http-request-timeout: 30000
+      socket-timeout: 30000
+      conn-request-timeout: 30000
+      max-threads: 400
+      max-threads-per-route: 200
+
+config:
+  date-format: "dd/MMM/yyyy"
+  menu-flag: MENU
+  login-form: LOGINFRM 
+  not-apply: NA 
+  field-status:
+    M: 
+      name: visible
+      order: 3
+    V: 
+      name: readonly
+      order: 2
+    I: 
+      name: hidden
+      order: 1
+  endpoints:
+    user:
+      validate: /validateUser
+      data: UserDataBase
+      process: UserProcess
+  #form-names:
+  settings:
+    minlength-pass: 8
+    max-try-pwd: 5
